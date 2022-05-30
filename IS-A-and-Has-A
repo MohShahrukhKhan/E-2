@@ -1,0 +1,51 @@
+In Java, we have two types of relationship:
+
+Is-A relationship-->Whenever one class inherits another class, it is called an IS-A relationship.
+Has-A relationship--> Whenever an instance of one class is used in another class, it is called HAS-A relationship.
+
+
+
+package abcpackage;
+
+public class Addition {
+   /* Since we didn't mention any access modifier here, it would
+    * be considered as default.
+    */
+   int addTwoNumbers(int a, int b){
+	return a+b;
+   }
+}
+
+
+class ABC{  
+    private double num = 100;
+    private int square(int a){
+     return a*a;
+    }
+ }  
+ public class Example{
+    public static void main(String args[]){  
+     ABC obj = new ABC();  
+     System.out.println(obj.num); 
+     System.out.println(obj.square(10));
+    }  
+ }
+ Protected data member and method are only accessible by the classes of the same package and the subclasses present in any package
+ // protected
+ package abcpackage;
+public class Addition {
+
+   protected int addTwoNumbers(int a, int b){
+	return a+b;
+   }
+}
+The members, methods and classes that are declared public can be accessed from anywhere
+//this time the method addTwoNumbers() has public modifier and class Test is able to access this method without even extending the Addition class
+package abcpackage;
+
+public class Addition {
+
+   public int addTwoNumbers(int a, int b){
+	return a+b;
+   }
+}
